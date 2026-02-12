@@ -125,6 +125,11 @@
       EDITOR = "helix";
       WORDCHARS = ''''${WORDCHARS//[\/]}'';
     };
+    shellAliases = {
+      cat = "bat -p";
+      ls="eza --icons=auto";
+      tree="eza -T";
+    };
   };
 
   programs.fzf = {

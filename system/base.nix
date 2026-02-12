@@ -99,6 +99,8 @@
     helix
     gnupg
     htop
+    bat
+    eza
   ];
   
   swapDevices = [{
