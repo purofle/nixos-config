@@ -101,17 +101,13 @@
     htop
     bat
     eza
+    vscode
   ];
   
   swapDevices = [{
   device = "/var/lib/swapfile";
   size = 4*1024; # 4 GB
 }];
-
-  programs.vscode = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {
