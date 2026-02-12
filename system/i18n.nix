@@ -1,0 +1,22 @@
+{ pkgs, ... }:
+
+{
+  i18n = {
+    defaultLocale = "zh_CN.UTF-8";
+    supportedLocales = [
+      "zh_CN.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+    ];
+
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5.addons = with pkgs.qt6Packages; [
+        fcitx5-configtool
+        fcitx5-chinese-addons
+        fcitx5-qt
+      ];
+      fcitx5.waylandFrontend = true;
+    };
+  };
+}
