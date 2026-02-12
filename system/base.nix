@@ -72,7 +72,6 @@
       kdePackages.kate
       pkgs.kdePackages.kdeconnect-kde
       telegram-desktop
-      vscode
       nil
     ];
   };
@@ -93,12 +92,18 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
-    helix
     wget
     git
     nixfmt
     nil
+    helix
+    gnupg
   ];
+
+  programs.vscode = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {

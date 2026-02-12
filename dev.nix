@@ -5,6 +5,7 @@
     gh
     lazygit
     osc
+    kdePackages.kleopatra
   ];
 
   programs.ssh = {

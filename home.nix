@@ -68,6 +68,7 @@
         "brackets"
       ];
     };
+    defaultKeymap = "emacs";
     completionInit = "";
     setOptions = [
       "HIST_IGNORE_ALL_DUPS"
