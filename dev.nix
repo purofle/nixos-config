@@ -6,6 +6,10 @@
     lazygit
     osc
     kdePackages.kleopatra
+    pre-commit
+    jetbrains.webstorm
+    pnpm
+    nodejs
   ];
 
   programs.ssh = {

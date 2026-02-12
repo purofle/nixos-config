@@ -98,7 +98,13 @@
     nil
     helix
     gnupg
+    htop
   ];
+  
+  swapDevices = [{
+  device = "/var/lib/swapfile";
+  size = 4*1024; # 4 GB
+}];
 
   programs.vscode = {
     enable = true;
