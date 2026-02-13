@@ -45,7 +45,7 @@ in
       "HIST_IGNORE_ALL_DUPS"
       "CORRECT"
     ];
-    initContent = lib.mkOrder 500 '
+    initContent = lib.mkOrder 500 ''
       ZIM_HOME=''${ZDOTDIR:-''${HOME}}/.zim
       # Download zimfw plugin manager if missing.
       if [[ ! -e ''${ZIM_HOME}/zimfw.zsh ]]; then

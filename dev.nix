@@ -1,10 +1,14 @@
 { lib, pkgs, ... }:
 
 {
+
+  imports = [
+    ./python.nix
+  ];
+
   home.packages = with pkgs; [
     gh
     lazygit
-    osc
     kdePackages.kleopatra
     pre-commit
     jetbrains.webstorm
