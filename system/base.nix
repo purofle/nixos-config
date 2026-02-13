@@ -67,6 +67,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -103,11 +104,17 @@
     eza
     vscode
   ];
-  
-  swapDevices = [{
-  device = "/var/lib/swapfile";
-  size = 4*1024; # 4 GB
-}];
+
+  virtualisation.docker = {
+    enable = true;
+  };
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024; # 4 GB
+    }
+  ];
 
   programs.mtr.enable = true;
   programs.gnupg.agent = {
