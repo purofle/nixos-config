@@ -103,6 +103,8 @@
     bat
     eza
     vscode
+    lm_sensors
+    s-tui
   ];
 
   virtualisation.docker = {
