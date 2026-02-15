@@ -12,6 +12,7 @@
     kdePackages.kleopatra
     pre-commit
     jetbrains.webstorm
+    jetbrains.idea
     pnpm
     nodejs
   ];

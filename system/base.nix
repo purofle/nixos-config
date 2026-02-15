@@ -105,6 +105,9 @@
     vscode
     lm_sensors
     s-tui
+    gparted
+    dust
+    file
   ];
 
   virtualisation.docker = {
