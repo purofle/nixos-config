@@ -71,9 +71,11 @@
     ];
     packages = with pkgs; [
       kdePackages.kate
-      pkgs.kdePackages.kdeconnect-kde
+      kdePackages.kdeconnect-kde
       telegram-desktop
       nil
+      vlc
+      mpv
     ];
   };
 

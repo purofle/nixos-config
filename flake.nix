@@ -22,6 +22,9 @@
       "nix-command"
       "flakes"
     ];
+    trusted-users = [
+      "purofle"
+    ];
   };
 
   outputs =
