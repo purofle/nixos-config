@@ -13,6 +13,7 @@
     lazygit
     kdePackages.kleopatra
     pre-commit
+    jetbrains.pycharm
     jetbrains.webstorm
     jetbrains.idea
     pnpm
