@@ -76,6 +76,8 @@
       nil
       vlc
       mpv
+      ghidra
+      wechat-uos
     ];
   };
 
