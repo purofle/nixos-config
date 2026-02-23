@@ -81,10 +81,32 @@
     ];
   };
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
   programs.nix-ld.enable = true;
+
+  programs.steam.enable = true;
+
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-vaapi
+    ];
+  };
 
   programs._1password.enable = true;
   programs._1password-gui = {

@@ -18,6 +18,9 @@
     jetbrains.idea
     pnpm
     nodejs
+    rustup
+    rustPlatform.bindgenHook
+    gcc
   ];
 
   programs.ssh.enable = true;
