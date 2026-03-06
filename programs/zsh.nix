@@ -82,7 +82,7 @@ in
       zstyle ':completion:*' menu select
     '';
     sessionVariables = {
-      EDITOR = "helix";
+      EDITOR = "code --wait";
       WORDCHARS = ''''${WORDCHARS//[\/]}'';
     };
     shellAliases = {
