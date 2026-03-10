@@ -136,6 +136,7 @@
     gparted
     dust
     file
+    usbutils
   ];
 
   virtualisation.docker = {
