@@ -34,7 +34,6 @@
         system = "x86_64-linux";
         modules = [
           ./system
-          ./chrome.nix
           inputs.daeuniverse.nixosModules.dae
           inputs.daeuniverse.nixosModules.daed
           home-manager.nixosModules.home-manager

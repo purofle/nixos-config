@@ -78,6 +78,7 @@
       mpv
       ghidra
       wechat-uos
+      google-chrome
     ];
   };
 
