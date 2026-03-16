@@ -100,6 +100,21 @@ in
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      add_newline = true;
+      username = {
+        format = "[$user]($style) @ ($hostname)";
+        show_always = true;
+        style_user = "bold #8be9fd";
+      };
+      character = {
+        success_symbol = "[❯❯❯](bold green)";
+      };
+      hostname = {
+        style = "bold #bd93f9";
+        ssh_only = false;
+      };
+    };
   };
 
   programs.atuin = {
