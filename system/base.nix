@@ -14,6 +14,10 @@
         canTouchEfiVariables = true;
       };
     };
+    binfmt = {
+      emulatedSystems = [ "riscv64-linux" ];
+      preferStaticEmulators = true;
+    };
   };
 
   nix = {
@@ -138,6 +142,7 @@
     dust
     file
     usbutils
+    qemu-user
   ];
 
   virtualisation.docker = {
