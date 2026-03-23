@@ -28,6 +28,13 @@
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.npu.enable = true;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware = {
+    enableRedistributableFirmware = true;
+    cpu.intel = {
+      npu.enable = true;
+      updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+    firmware = [ pkgs.linux-firmware ];
+  };
 }

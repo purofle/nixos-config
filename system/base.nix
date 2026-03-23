@@ -18,6 +18,7 @@
       emulatedSystems = [ "riscv64-linux" ];
       preferStaticEmulators = true;
     };
+    kernelPackages = pkgs.linuxPackages_zen;
   };
 
   nix = {
