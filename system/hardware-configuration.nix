@@ -30,7 +30,9 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hardware = {
+    graphics.extraPackages = [ pkgs.intel-compute-runtime ];
     enableRedistributableFirmware = true;
+    enableAllFirmware = true;
     cpu.intel = {
       npu.enable = true;
       updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
