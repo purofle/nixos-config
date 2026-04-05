@@ -2,6 +2,7 @@
 
 {
   boot = {
+    kernelParams = [ "pcie_port_pm=off" ];
     loader = {
       grub = {
         enable = true;
@@ -85,6 +86,9 @@
       wechat-uos
       google-chrome
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"
+  ];
   };
 
   hardware.graphics = {
@@ -144,6 +148,8 @@
     file
     usbutils
     qemu-user
+    nvtopPackages.intel
+    pciutils
   ];
 
   virtualisation.docker = {
