@@ -1,15 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot = {
     kernelParams = [ "pcie_port_pm=off" ];
     loader = {
-      grub = {
+      # lanzaboote provides systemd-boot module
+      limine = {
         enable = true;
-        efiSupport = true;
-        configurationLimit = 3;
-        useOSProber = true;
-        device = "nodev";
+        secureBoot.enable = true;
+        maxGenerations = 3;
+        enableEditor = true;
+        extraEntries = ''
+          /Windows 11
+            protocol: efi
+            path: guid(e8c6be0b-a907-4969-9bae-6aa070852079):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
+        style = {
+          wallpapers = [ "/home/purofle/Pictures/wallpaper.jpg" ];
+        };
       };
       efi = {
         canTouchEfiVariables = true;
@@ -88,7 +96,7 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"
-  ];
+    ];
   };
 
   hardware.graphics = {
@@ -150,6 +158,7 @@
     qemu-user
     nvtopPackages.intel
     pciutils
+    sbctl
   ];
 
   virtualisation.docker = {
