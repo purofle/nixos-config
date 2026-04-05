@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
-    browser-previews.url = "github:nix-community/browser-previews";
 
     home-manager = {
       url = "github:nix-community/home-manager";
