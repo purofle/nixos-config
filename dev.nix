@@ -21,6 +21,7 @@
     rustup
     rustPlatform.bindgenHook
     gcc
+    zulu
   ];
 
   programs.ssh = {
