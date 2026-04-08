@@ -1,10 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   boot = {
     kernelParams = [ "pcie_port_pm=off" ];
     loader = {
-      # lanzaboote provides systemd-boot module
       limine = {
         enable = true;
         secureBoot.enable = true;
