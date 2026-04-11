@@ -8,7 +8,6 @@
         enable = true;
         secureBoot.enable = true;
         maxGenerations = 3;
-        enableEditor = true;
         extraEntries = ''
           /Windows 11
             protocol: efi
@@ -16,6 +15,12 @@
         '';
         style = {
           wallpapers = [ "/home/purofle/Pictures/wallpaper.jpg" ];
+          interface = {
+            resolution = "2560x1440";
+            helpHidden = true;
+            branding = "Purofle's computer";
+            brandingColor = 6;
+          };
         };
       };
       efi = {
