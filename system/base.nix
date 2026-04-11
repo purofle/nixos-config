@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   boot = {
@@ -79,6 +79,15 @@
     enable = true;
   };
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      wechat-uos = (import inputs.wechat-4114 {
+        system = prev.system;
+        config.allowUnfree = true;
+      }).wechat-uos;
+    })
+  ];
+
   users.users.purofle = {
     isNormalUser = true;
     description = "purofle";
@@ -95,8 +104,8 @@
       vlc
       mpv
       ghidra
-      wechat-uos
       google-chrome
+      wechat-uos
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"

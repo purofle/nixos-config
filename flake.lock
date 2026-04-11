@@ -108,7 +108,24 @@
       "inputs": {
         "daeuniverse": "daeuniverse",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "wechat-4114": "wechat-4114"
+      }
+    },
+    "wechat-4114": {
+      "locked": {
+        "lastModified": 1775026999,
+        "narHash": "sha256-2zW3mR//RX4Z201O6wa9ac/+VsAzivBmBvzOe5HSWzk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5fa67f761738c6f7d2e438869ac1d0e856d7116a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "pull/505623/head",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     }
   },
