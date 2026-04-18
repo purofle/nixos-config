@@ -4,24 +4,12 @@
   boot = {
     kernelParams = [ "pcie_port_pm=off" ];
     loader = {
-      limine = {
+      grub = {
         enable = true;
-        secureBoot.enable = true;
-        maxGenerations = 3;
-        extraEntries = ''
-          /Windows 11
-            protocol: efi
-            path: guid(e8c6be0b-a907-4969-9bae-6aa070852079):/EFI/Microsoft/Boot/bootmgfw.efi
-        '';
-        style = {
-          wallpapers = [ "/home/purofle/Pictures/wallpaper.jpg" ];
-          interface = {
-            resolution = "2560x1440";
-            helpHidden = true;
-            branding = "Purofle's computer";
-            brandingColor = 6;
-          };
-        };
+        efiSupport = true;
+        configurationLimit = 3;
+        device = "nodev";
+        useOSProber = true;
       };
       efi = {
         canTouchEfiVariables = true;
@@ -172,6 +160,7 @@
     nvtopPackages.intel
     pciutils
     sbctl
+    qemu
   ];
 
   virtualisation.docker = {
