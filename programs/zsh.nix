@@ -16,6 +16,7 @@ let
     "zsh-users/zsh-history-substring-search"
     "zsh-users/zsh-autosuggestions"
     "Aloxaf/fzf-tab"
+    "MoonshotAI/zsh-kimi-cli --source kimi-cli.plugin.zsh"
   ];
 
   zimrcContent = lib.concatMapStringsSep "\n" (m: "zmodule ${m}") zimModules;
