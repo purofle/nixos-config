@@ -161,6 +161,8 @@
     pciutils
     sbctl
     qemu
+    bubblewrap
+    android-tools
   ];
 
   virtualisation.docker = {
