@@ -80,6 +80,12 @@ in
       zstyle ':completion:*' rehash true
       zstyle ":history-search-multi-word" page-size "11"
       zstyle ':completion:*' menu select
+
+      export PNPM_HOME="/home/purofle/.local/share/pnpm"
+      case ":$PATH:" in
+        *":$PNPM_HOME:"*) ;;
+        *) export PATH="$PNPM_HOME:$PATH" ;;
+      esac
     '';
     sessionVariables = {
       EDITOR = "code --wait";
