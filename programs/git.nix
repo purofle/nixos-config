@@ -1,4 +1,10 @@
+{ pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    git-absorb
+    git-interactive-rebase-tool
+  ];
   programs.git = {
     enable = true;
     settings = {
@@ -16,5 +22,8 @@
         path = "~/work/.gitconfig";
       }
     ];
+    extraConfig = {
+      sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+    };
   };
 }
