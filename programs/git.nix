@@ -24,6 +24,7 @@
     ];
     extraConfig = {
       sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+      absorb.maxStack = 500;
     };
   };
 }
