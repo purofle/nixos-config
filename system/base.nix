@@ -24,9 +24,18 @@
 
   nix = {
     settings = {
+      substituters = [
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
+
+        "https://cache.nixos.org"
+      ];
       experimental-features = [
         "nix-command"
         "flakes"
+      ];
+      trusted-users = [
+        "purofle"
+        "root"
       ];
       # 感觉可能有用
       auto-optimise-store = true;
@@ -69,10 +78,11 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      wechat-uos = (import inputs.wechat-4114 {
-        system = prev.system;
-        config.allowUnfree = true;
-      }).wechat-uos;
+      wechat-uos =
+        (import inputs.wechat-4114 {
+          system = prev.system;
+          config.allowUnfree = true;
+        }).wechat-uos;
     })
   ];
 
