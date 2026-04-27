@@ -94,6 +94,7 @@
       ghidra
       google-chrome
       wechat-uos
+      qq
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"
