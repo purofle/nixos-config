@@ -38,5 +38,9 @@
       updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
     firmware = [ pkgs.linux-firmware ];
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 }

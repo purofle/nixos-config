@@ -27,14 +27,22 @@
     ];
     trusted-users = [
       "purofle"
+      "root"
     ];
   };
 
   outputs =
     { nixpkgs, home-manager, wechat-4114, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+      inherit system;
+    };
+    in
     {
+      devShells.${system}.rust = import ./develop/rust.nix { inherit pkgs; };
       nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
           ./system
           inputs.daeuniverse.nixosModules.dae
