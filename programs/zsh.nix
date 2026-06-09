@@ -91,7 +91,6 @@ in
     '';
     sessionVariables = {
       EDITOR = "code --wait";
-      WORDCHARS = ''''${WORDCHARS//[\/]}'';
     };
     shellAliases = {
       cat = "bat -p";

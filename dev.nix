@@ -22,6 +22,7 @@
     rustPlatform.bindgenHook
     gcc
     zulu
+    jq
   ];
 
   programs.ssh = {

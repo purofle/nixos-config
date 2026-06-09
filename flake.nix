@@ -9,10 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    wechat-4114 = {
-      url = "github:NixOS/nixpkgs/pull/505623/head";
-    };
   };
 
   nixConfig = {
@@ -32,7 +28,7 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, wechat-4114, ... }@inputs:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

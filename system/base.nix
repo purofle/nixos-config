@@ -76,16 +76,6 @@
     enable = true;
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      wechat-uos =
-        (import inputs.wechat-4114 {
-          system = prev.system;
-          config.allowUnfree = true;
-        }).wechat-uos;
-    })
-  ];
-
   users.users.purofle = {
     isNormalUser = true;
     description = "purofle";
@@ -104,7 +94,6 @@
       mpv
       ghidra
       google-chrome
-      wechat-uos
       qq
       eden
     ];
