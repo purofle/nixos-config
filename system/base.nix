@@ -83,6 +83,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "libvirtd"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -165,10 +166,21 @@
     qemu
     bubblewrap
     android-tools
+    # qq
+    doggo
+    wechat
   ];
 
-  virtualisation.docker = {
-    enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
+    };
   };
 
   swapDevices = [

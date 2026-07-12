@@ -23,6 +23,7 @@
     gcc
     zulu
     jq
+    virt-manager
   ];
 
   programs.ssh = {

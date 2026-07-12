@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1779856798,
-        "narHash": "sha256-Q1BTTk45eEvP6R6/VQQ6P1GhTQHVZMhyyu3qDmYEwhQ=",
+        "lastModified": 1781407285,
+        "narHash": "sha256-xVYNYbd9cPY18yrOn2Ysh7ecZknQj4y67o58MIOXbsI=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "a4f652e35e792173b30c5b9c7897f9ecebc63cc8",
+        "rev": "e13041c9a160defbc6aac95bcb88ba5c43cf25ae",
         "type": "github"
       },
       "original": {
@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781009359,
-        "narHash": "sha256-w/mZkRscTatf8NWyUstli8ROzM/eopxZzi0WRjoeYkU=",
+        "lastModified": 1781497404,
+        "narHash": "sha256-9GAF8sSsnkyCVCWkomXR0T+zdSxyUlfPt6neQidimdg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c58ead12efcac436afffa93a22099a5595eb4157",
+        "rev": "1285cd3d6882a9847f2d56ed5541b3350c8a6162",
         "type": "github"
       },
       "original": {
@@ -90,11 +90,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
+        "lastModified": 1781074563,
+        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
         "type": "github"
       },
       "original": {
@@ -104,28 +104,11 @@
         "type": "github"
       }
     },
-    "qq-260528": {
-      "locked": {
-        "lastModified": 1780310775,
-        "narHash": "sha256-pyT7Y6edJz4OtHGVfJVJ/8S50pejw/qH/mg10iuEk7Y=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "75386be2d195f4fa30d3a98996f55ee3450681e8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "pull/526696/head",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "daeuniverse": "daeuniverse",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
-        "qq-260528": "qq-260528"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
