@@ -8,6 +8,7 @@
       source-han-serif
       source-han-sans
       noto-fonts-color-emoji
+      lxgw-wenkai
     ];
 
     fontconfig = {
