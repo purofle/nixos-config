@@ -197,5 +197,16 @@
 
   services.openssh.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+      addresses = true;
+    };
+  };
+
   networking.firewall.enable = false;
 }
