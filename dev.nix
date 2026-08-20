@@ -28,6 +28,8 @@
     ripgrep
     kitty
     tmux
+    zellij
+    jujutsu
   ];
 
   programs.ssh = {
