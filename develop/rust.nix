@@ -2,7 +2,8 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
-    rust
+    rustc
+    cargo
     pkg-config
     openssl
   ];
@@ -10,6 +11,8 @@ pkgs.mkShell {
   shellHook = ''
     rustc --version
     cargo --version
-    exec zsh
+    if [[ $- == *i* ]]; then
+      exec zsh
+    fi
   '';
 }

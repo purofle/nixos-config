@@ -15,6 +15,8 @@
       commit = {
         gpgSign = true;
       };
+      sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+      absorb.maxStack = 500;
     };
     includes = [
       {
@@ -22,9 +24,5 @@
         path = "~/work/.gitconfig";
       }
     ];
-    settings = {
-      sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
-      absorb.maxStack = 500;
-    };
   };
 }

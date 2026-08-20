@@ -2,19 +2,6 @@
 
 {
   boot = {
-    kernelParams = [ "pcie_port_pm=off" ];
-    loader = {
-      grub = {
-        enable = true;
-        efiSupport = true;
-        configurationLimit = 3;
-        device = "nodev";
-        useOSProber = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-      };
-    };
     binfmt = {
       emulatedSystems = [ "riscv64-linux" ];
       preferStaticEmulators = true;
@@ -50,10 +37,8 @@
   time.timeZone = "Asia/Shanghai";
   system.stateVersion = "25.11";
 
-  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  services.fprintd.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -97,16 +82,10 @@
       google-chrome
       qq
       eden
+      typst
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"
-    ];
-  };
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
     ];
   };
 
@@ -146,7 +125,6 @@
     wget
     git
     nixfmt
-    nil
     helix
     gnupg
     htop
@@ -166,7 +144,6 @@
     qemu
     bubblewrap
     android-tools
-    qq
     doggo
     wechat
   ];
@@ -183,13 +160,6 @@
     };
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 4 * 1024; # 4 GB
-    }
-  ];
-
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
@@ -199,7 +169,8 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
+    nssmdns6 = true;
     openFirewall = true;
     publish = {
       enable = true;

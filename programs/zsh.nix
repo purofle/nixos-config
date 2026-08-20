@@ -61,8 +61,6 @@ in
       bindkey "^[[1;3C" forward-word
       bindkey "^[[1;3D" backward-word
       unset key
-      setopt HIST_IGNORE_ALL_DUPS
-      setopt CORRECT 
       zstyle ':completion:*' list-colors "''${(@s.:.)LS_COLORS}"
       zstyle ':completion:*:matches' group 'yes'
       zstyle ':completion:*:options' description 'yes'
@@ -82,12 +80,13 @@ in
       zstyle ":history-search-multi-word" page-size "11"
       zstyle ':completion:*' menu select
 
-      export PNPM_HOME="/home/purofle/.local/share/pnpm"
+      export PNPM_HOME="$HOME/.local/share/pnpm"
       case ":$PATH:" in
         *":$PNPM_HOME/bin:"*) ;;
         *) export PATH="$PNPM_HOME/bin:$PATH" ;;
       esac
       export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+      export PATH="$HOME/.kimi-code/bin:$PATH"
     '';
     sessionVariables = {
       EDITOR = "code --wait";

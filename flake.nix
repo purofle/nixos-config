@@ -17,14 +17,6 @@
 
       "https://cache.nixos.org"
     ];
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [
-      "purofle"
-      "root"
-    ];
   };
 
   outputs =
@@ -34,13 +26,13 @@
       pkgs = import nixpkgs {
       inherit system;
     };
-    in
-    {
-      devShells.${system}.rust = import ./develop/rust.nix { inherit pkgs; };
-      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+    mkHost =
+      hostname:
+      inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./system
+          ./hosts/${hostname}
           inputs.daeuniverse.nixosModules.dae
           inputs.daeuniverse.nixosModules.daed
           home-manager.nixosModules.home-manager
@@ -54,5 +46,10 @@
           inherit inputs;
         };
       };
+    in
+    {
+      formatter.${system} = pkgs.nixfmt;
+      devShells.${system}.rust = import ./develop/rust.nix { inherit pkgs; };
+      nixosConfigurations.nixos = mkHost "nixos";
     };
 }
