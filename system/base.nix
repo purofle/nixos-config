@@ -166,7 +166,7 @@
     qemu
     bubblewrap
     android-tools
-    # qq
+    qq
     doggo
     wechat
   ];

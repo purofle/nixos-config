@@ -24,6 +24,10 @@
     zulu
     jq
     virt-manager
+    go
+    ripgrep
+    kitty
+    tmux
   ];
 
   programs.ssh = {
