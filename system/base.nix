@@ -146,6 +146,7 @@
     android-tools
     doggo
     wechat
+    nur.repos.ccicnce113424.splayer-next-dev
   ];
 
   virtualisation = {

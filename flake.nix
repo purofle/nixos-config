@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -37,6 +41,7 @@
           inputs.daeuniverse.nixosModules.daed
           home-manager.nixosModules.home-manager
           {
+            nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
             home-manager.users.purofle = ./home.nix;
