@@ -83,6 +83,8 @@
       qq
       eden
       typst
+      discord
+      blender
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAjbiKTIcKZZqETsz7EOo8xsYN07u+5q6xSSdlkwUqU8"
@@ -147,6 +149,7 @@
     doggo
     wechat
     nur.repos.ccicnce113424.splayer-next-dev
+    dig
   ];
 
   virtualisation = {
