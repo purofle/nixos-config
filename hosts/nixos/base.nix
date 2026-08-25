@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   boot = {
@@ -7,31 +7,6 @@
       preferStaticEmulators = true;
     };
     kernelPackages = pkgs.linuxPackages_zen;
-  };
-
-  nix = {
-    settings = {
-      substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-
-        "https://cache.nixos.org"
-      ];
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      trusted-users = [
-        "purofle"
-        "root"
-      ];
-      # 感觉可能有用
-      auto-optimise-store = true;
-    };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 14d";
-      dates = "daily";
-    };
   };
 
   time.timeZone = "Asia/Shanghai";
@@ -116,41 +91,6 @@
     enable = true;
     polkitPolicyOwners = [ "purofle" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    nixfmt
-    helix
-    gnupg
-    htop
-    bat
-    eza
-    vscode
-    lm_sensors
-    s-tui
-    gparted
-    dust
-    file
-    usbutils
-    qemu-user
-    nvtopPackages.intel
-    pciutils
-    sbctl
-    qemu
-    bubblewrap
-    android-tools
-    doggo
-    wechat
-    nur.repos.ccicnce113424.splayer-next-dev
-    dig
-  ];
 
   virtualisation = {
     docker.enable = true;

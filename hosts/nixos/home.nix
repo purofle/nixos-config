@@ -1,9 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    ./dev.nix
-    ./programs/zsh.nix
+    ../../dev.nix
+    ../../programs/zsh.nix
   ];
 
   home.username = "purofle";

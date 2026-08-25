@@ -3,6 +3,10 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./base.nix
+    ./i18n.nix
+    ./font.nix
+    ./packages.nix
   ];
 
   networking.hostName = "nixos";

@@ -1,5 +1,19 @@
 {
-  description = "purofle's NixOS Flake";
+  description = "purofle's Nix Flake";
+
+  nixConfig = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    substituters = [
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+
+      "https://cache.nixos.org"
+    ];
+
+  };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -13,48 +27,69 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  nixConfig = {
-    substituters = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-
-      "https://cache.nixos.org"
-    ];
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    inputs:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-      inherit system;
-    };
-    mkHost =
-      hostname:
-      inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
+      commonModules = import ./common;
+      lib = inputs.nixpkgs.lib;
+    in
+    {
+      nixosConfigurations."nixos" = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
-          ./system
-          ./hosts/${hostname}
-          inputs.daeuniverse.nixosModules.dae
+          commonModules
+          ./hosts/nixos
+
+          inputs.home-manager.nixosModules.home-manager
           inputs.daeuniverse.nixosModules.daed
-          home-manager.nixosModules.home-manager
+          inputs.nur.modules.nixos.default
           {
             nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
-            home-manager.users.purofle = ./home.nix;
+            home-manager.users.purofle = ./hosts/nixos/home.nix;
           }
         ];
         specialArgs = {
           inherit inputs;
         };
       };
-    in
-    {
-      formatter.${system} = pkgs.nixfmt;
-      devShells.${system}.rust = import ./develop/rust.nix { inherit pkgs; };
-      nixosConfigurations.nixos = mkHost "nixos";
+
+      darwinConfigurations."Mac-mini" = inputs.nix-darwin.lib.darwinSystem {
+        modules = [
+          commonModules
+          ./hosts/darwin
+
+          inputs.home-manager.darwinModules.home-manager
+          inputs.nur.modules.darwin.default
+          {
+            nixpkgs.overlays = [ inputs.nur.overlays.default ];
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = false;
+            home-manager.users.purofle = ./hosts/darwin/home.nix;
+          }
+        ];
+        specialArgs = {
+          inherit inputs;
+        };
+      };
+
+      formatter = lib.genAttrs systems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt);
+      # devShells.${linuxSystem}.rust = import ./develop/rust.nix {
+      #   pkgs = import nixpkgs { system = linuxSystem; };
+      # };
+      # nixosConfigurations.nixos = mkNixosHost "nixos";
+      # darwinConfigurations."Mac-mini" = mkDarwinHost;
     };
 }
