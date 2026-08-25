@@ -11,11 +11,7 @@
   home.packages = with pkgs; [
     gh
     lazygit
-    kdePackages.kleopatra
     pre-commit
-    jetbrains.pycharm
-    jetbrains.webstorm
-    jetbrains.idea
     pnpm
     nodejs
     rustup
@@ -23,7 +19,6 @@
     gcc
     zulu
     jq
-    virt-manager
     go
     ripgrep
     kitty

@@ -3,6 +3,7 @@
 {
   imports = [
     ../../dev.nix
+    ../../dev-linux.nix
     ../../programs/zsh.nix
   ];
 
