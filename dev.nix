@@ -3,9 +3,9 @@
 {
 
   imports = [
-    ./programs/python.nix
-    ./programs/git.nix
-    ./programs/1password.nix
+    ./common/programs/python.nix
+    ./common/programs/git.nix
+    ./common/programs/1password.nix
   ];
 
   home.packages = with pkgs; [
