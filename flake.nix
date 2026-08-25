@@ -58,6 +58,7 @@
             nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.purofle = ./hosts/nixos/home.nix;
           }
         ];
@@ -77,6 +78,7 @@
             nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.purofle = ./hosts/darwin/home.nix;
           }
         ];
