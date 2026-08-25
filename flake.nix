@@ -88,10 +88,11 @@
       };
 
       formatter = lib.genAttrs systems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt);
-      # devShells.${linuxSystem}.rust = import ./develop/rust.nix {
-      #   pkgs = import nixpkgs { system = linuxSystem; };
-      # };
-      # nixosConfigurations.nixos = mkNixosHost "nixos";
-      # darwinConfigurations."Mac-mini" = mkDarwinHost;
+      devShells = lib.genAttrs systems (system: {
+        rust = import ./develop/rust.nix {
+          inherit system;
+          pkgs = import inputs.nixpkgs { inherit system; };
+        };
+      });
     };
 }
