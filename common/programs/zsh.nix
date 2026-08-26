@@ -26,9 +26,8 @@ in
 
   programs.zsh = {
     enable = true;
-    # zimfw owns completion; skip macOS global compinit
+    # Zim owns completion initialization.
     enableCompletion = false;
-    envExtra = "skip_global_compinit=1";
     defaultKeymap = "emacs";
     setOptions = [
       "HIST_IGNORE_ALL_DUPS"
