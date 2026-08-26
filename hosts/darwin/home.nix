@@ -1,7 +1,7 @@
 {
   imports = [
     ../../dev.nix
-    
+    ../../common/programs/zsh.nix
   ];
 
   home.username = "purofle";

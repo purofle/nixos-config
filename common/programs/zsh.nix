@@ -9,7 +9,6 @@ let
     "utility"
     "duration-info"
     "git-info"
-    "asciiship"
     "zsh-users/zsh-completions --fpath src"
     "completion"
     "zsh-users/zsh-syntax-highlighting"
@@ -27,14 +26,10 @@ in
 
   programs.zsh = {
     enable = true;
-    syntaxHighlighting = {
-      enable = true;
-      highlighters = [
-        "brackets"
-      ];
-    };
+    # zimfw owns completion; skip macOS global compinit
+    enableCompletion = false;
+    envExtra = "skip_global_compinit=1";
     defaultKeymap = "emacs";
-    completionInit = "";
     setOptions = [
       "HIST_IGNORE_ALL_DUPS"
       "CORRECT"
