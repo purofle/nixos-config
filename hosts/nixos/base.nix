@@ -9,7 +9,6 @@
     kernelPackages = pkgs.linuxPackages_zen;
   };
 
-  time.timeZone = "Asia/Shanghai";
   system.stateVersion = "25.11";
 
   networking.networkmanager.enable = true;
