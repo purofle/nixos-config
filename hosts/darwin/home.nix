@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ../../dev.nix
@@ -14,4 +14,8 @@
   programs.zsh.envExtra = lib.mkAfter ''
     export NOSYSZSHRC=1
   '';
+
+  home.packages = [
+    pkgs.orbstack
+  ];
 }

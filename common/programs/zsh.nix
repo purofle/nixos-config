@@ -81,6 +81,7 @@ in
       esac
       export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/.kimi-code/bin:$PATH"
+      export PATH="$HOME/.orbstack/bin:$PATH"
     '';
     sessionVariables = {
       EDITOR = "code --wait";
