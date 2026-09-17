@@ -17,5 +17,6 @@
     android-tools
     wechat
     nur.repos.ccicnce113424.splayer-next-dev
+    osu-lazer-bin
   ];
 }
