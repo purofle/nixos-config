@@ -20,5 +20,5 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  time.timeZone = "Asia/Tokyo";
+  time.timeZone = "Asia/Shanghai";
 }
