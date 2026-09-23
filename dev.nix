@@ -17,6 +17,7 @@
     rustup
     rustPlatform.bindgenHook
     gcc
+    clang-tools
     zulu
     jq
     go
