@@ -91,6 +91,9 @@ in
       ls = "eza --icons=auto";
       tree = "eza -T";
     };
+    envExtra = lib.mkAfter ''
+      export NOSYSZSHRC=1
+    '';
   };
 
   programs.fzf = {
