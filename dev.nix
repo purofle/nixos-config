@@ -26,6 +26,7 @@
     tmux
     zellij
     jujutsu
+    codex
   ];
 
   programs.ssh = {
