@@ -6,6 +6,7 @@
     jetbrains.pycharm
     jetbrains.webstorm
     jetbrains.idea
+    jetbrains.goland
     virt-manager
   ];
 }
