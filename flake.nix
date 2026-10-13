@@ -17,7 +17,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    daeuniverse.url = "github:daeuniverse/flake.nix";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,7 +51,6 @@
           ./hosts/nixos
 
           inputs.home-manager.nixosModules.home-manager
-          inputs.daeuniverse.nixosModules.daed
           inputs.nur.modules.nixos.default
           {
             nixpkgs.overlays = [ inputs.nur.overlays.default ];

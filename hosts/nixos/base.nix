@@ -31,10 +31,6 @@
     pulse.enable = true;
   };
 
-  services.daed = {
-    enable = true;
-  };
-
   users.users.purofle = {
     isNormalUser = true;
     description = "purofle";
@@ -129,5 +125,12 @@
 
   services.tailscale = {
     enable = true;
+  };
+
+  services.mihomo = {
+    enable = true;
+    tunMode = true;
+    webui = "/var/lib/private/mihomo/zashboard";
+    configFile = "/etc/mihomo/config.yaml";
   };
 }
