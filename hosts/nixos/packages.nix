@@ -20,5 +20,6 @@
     osu-lazer-bin
     xmind
     cisco-packet-tracer_9
+    wpsoffice-cn
   ];
 }
