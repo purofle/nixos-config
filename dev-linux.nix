@@ -7,6 +7,7 @@
     jetbrains.webstorm
     jetbrains.idea
     jetbrains.goland
+    android-studio
     virt-manager
   ];
 }

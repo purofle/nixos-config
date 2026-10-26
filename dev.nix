@@ -27,6 +27,8 @@
     zellij
     jujutsu
     codex
+    scrcpy
+    chatgpt
   ];
 
   programs.ssh = {
