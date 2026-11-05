@@ -9,5 +9,6 @@
     jetbrains.goland
     android-studio
     virt-manager
+    claude-code
   ];
 }
