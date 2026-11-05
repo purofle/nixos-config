@@ -20,6 +20,7 @@
         configurationLimit = 3;
         device = "nodev";
         useOSProber = true;
+        default = "saved";
       };
       efi = {
         canTouchEfiVariables = true;
