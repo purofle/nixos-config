@@ -16,7 +16,6 @@
     bubblewrap
     android-tools
     wechat-uos
-    nur.repos.ccicnce113424.splayer-next-dev
     osu-lazer-bin
     xmind
     cisco-packet-tracer_9

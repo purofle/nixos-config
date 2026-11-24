@@ -50,7 +50,6 @@
       mpv
       ghidra
       google-chrome
-      qq
       eden
       typst
       discord

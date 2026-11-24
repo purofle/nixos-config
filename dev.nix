@@ -29,6 +29,8 @@
     codex
     scrcpy
     chatgpt
+    antigravity-cli
+
   ];
 
   programs.ssh = {

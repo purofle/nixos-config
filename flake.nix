@@ -17,10 +17,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -51,9 +47,7 @@
           ./hosts/nixos
 
           inputs.home-manager.nixosModules.home-manager
-          inputs.nur.modules.nixos.default
           {
-            nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
             home-manager.backupFileExtension = "backup";
@@ -71,9 +65,7 @@
           ./hosts/darwin
 
           inputs.home-manager.darwinModules.home-manager
-          inputs.nur.modules.darwin.default
           {
-            nixpkgs.overlays = [ inputs.nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
             home-manager.backupFileExtension = "backup";
