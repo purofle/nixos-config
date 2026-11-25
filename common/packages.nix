@@ -16,5 +16,6 @@
     file
     doggo
     dig
+    unzip
   ];
 }
