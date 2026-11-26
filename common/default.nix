@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./fonts.nix
@@ -21,9 +23,21 @@
     };
     gc = {
       automatic = true;
-      dates = "daily";
       options = "--delete-older-than 5d";
-    };
+    }
+    // (
+      if pkgs.stdenv.hostPlatform.isDarwin then
+        {
+          interval = {
+            Hour = 0;
+            Minute = 0;
+          };
+        }
+      else
+        {
+          dates = "daily";
+        }
+    );
   };
 
   nixpkgs.config.allowUnfree = true;
