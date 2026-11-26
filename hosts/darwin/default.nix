@@ -1,6 +1,8 @@
 { inputs, ... }:
 
 {
+  imports = [ ../../modules/darwin/homekit-mdns-broadcaster.nix ];
+
   networking.hostName = "Mac-mini";
 
   system.primaryUser = "purofle";
@@ -18,5 +20,11 @@
 
   programs._1password-gui = {
     enable = true;
+  };
+
+  # Home Assistant runs in OrbStack, whose mDNS isn't visible on the LAN.
+  services.homekit-mdns-broadcaster = {
+    enable = true;
+    services = [ "HASS Bridge F6F76A" ];
   };
 }
