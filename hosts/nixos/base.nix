@@ -17,6 +17,15 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # 避免外接 Arc B580 时，KWin 的 Vulkan 跨显卡复制报错。
+  systemd.user.units."plasma-kwin_wayland.service" = {
+    overrideStrategy = "asDropin";
+    text = ''
+      [Service]
+      Environment=KWIN_ALLOW_VULKAN_MGPU_COPIES=0
+    '';
+  };
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
